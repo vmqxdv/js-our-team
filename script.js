@@ -36,3 +36,46 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+
+const cardsToAppend = [];
+
+teamMembers.forEach(member => {
+  const { name, role, email, img } = member;
+
+  const newCard = document.createElement('div');
+  newCard.classList = 'card';
+
+
+  const cardImage = document.createElement('img');
+  cardImage.src = img;
+  
+  
+  const cardData = document.createElement('div');
+  cardData.classList = 'data';
+  
+  const cardName = document.createElement('h6');
+  cardImage.classList = 'name';
+  cardName.innerHTML = name;
+  cardData.append(cardName);
+
+  const cardRole = document.createElement('p');
+  cardRole.classList = 'role';
+  cardRole.innerHTML = role;
+  cardData.append(cardRole);
+
+  const cardEmail = document.createElement('a');
+  cardEmail.classList = 'email';
+  cardEmail.innerHTML = email;
+  cardData.append(cardEmail);
+
+
+  newCard.append(cardImage);
+  newCard.append(cardData);
+
+
+  cardsToAppend.push(newCard);
+});
+
+
+console.log(cardsToAppend);
