@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 
 
 body {
-  padding: 0 3rem
+  padding: 0 2rem
 }
 
 
@@ -15,6 +16,7 @@ body {
 
 header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 header h1 {
@@ -23,4 +25,44 @@ header h1 {
 
 header p {
   font-size: 1.2rem;
+}
+
+
+
+main .members-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+main .members-cards .card {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: calc((100% - 4rem) / 3);
+}
+
+main .members-cards .card img {
+  width: 10rem;
+  margin-right: 2rem;
+}
+
+main .members-cards .card .data {
+  color: white;
+}
+
+main .members-cards .card .data .name {
+  margin-bottom: 0.4rem;
+  font-size: 2rem;
+}
+
+main .members-cards .card .data .role {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+main .members-cards .card .data .email {
+  font-size: 1.5rem;
 }
