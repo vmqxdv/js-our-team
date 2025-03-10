@@ -3,3 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+
+body {
+  padding: 0 3rem
+}
+
+
+
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin: 3rem 0;
+}
+
+header p {
+  font-size: 1.2rem;
+}
