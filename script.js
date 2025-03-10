@@ -55,7 +55,7 @@ teamMembers.forEach(member => {
   cardData.classList = 'data';
   
   const cardName = document.createElement('h6');
-  cardImage.classList = 'name';
+  cardName.classList = 'name';
   cardName.innerHTML = name;
   cardData.append(cardName);
 
@@ -67,6 +67,7 @@ teamMembers.forEach(member => {
   const cardEmail = document.createElement('a');
   cardEmail.classList = 'email';
   cardEmail.innerHTML = email;
+  cardEmail.href = '#';
   cardData.append(cardEmail);
 
 
@@ -79,3 +80,9 @@ teamMembers.forEach(member => {
 
 
 console.log(cardsToAppend);
+
+
+const cardsList = document.querySelector('.members-cards');
+cardsToAppend.forEach(card => {
+  cardsList.append(card);
+});
