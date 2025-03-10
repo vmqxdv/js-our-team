@@ -43,46 +43,20 @@ const cardsToAppend = [];
 teamMembers.forEach(member => {
   const { name, role, email, img } = member;
 
-  const newCard = document.createElement('div');
-  newCard.classList = 'card';
+  const cardHTML = `
+    <div class="card">
+      <img src="${img}" alt="${name}">
+      <div class="data">
+        <h6 class="name">${name}</h6>
+        <p class="role">${role}</p>
+        <a href="#" class="email">${email}</a>
+      </div>
+    </div>
+  `;
 
-
-  const cardImage = document.createElement('img');
-  cardImage.src = img;
-  
-  
-  const cardData = document.createElement('div');
-  cardData.classList = 'data';
-  
-  const cardName = document.createElement('h6');
-  cardName.classList = 'name';
-  cardName.innerHTML = name;
-  cardData.append(cardName);
-
-  const cardRole = document.createElement('p');
-  cardRole.classList = 'role';
-  cardRole.innerHTML = role;
-  cardData.append(cardRole);
-
-  const cardEmail = document.createElement('a');
-  cardEmail.classList = 'email';
-  cardEmail.innerHTML = email;
-  cardEmail.href = '#';
-  cardData.append(cardEmail);
-
-
-  newCard.append(cardImage);
-  newCard.append(cardData);
-
-
-  cardsToAppend.push(newCard);
+  cardsToAppend.push(cardHTML);
 });
-
-
-console.log(cardsToAppend);
 
 
 const cardsList = document.querySelector('.members-cards');
-cardsToAppend.forEach(card => {
-  cardsList.append(card);
-});
+cardsList.innerHTML = cardsToAppend.join('');
